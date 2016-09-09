@@ -1,0 +1,100 @@
+/*##############################################*/
+/*################### HEADER ###################*/
+/*##############################################*/
+header {
+    padding: 0px 0;
+    background-color: #689F38;
+}
+
+header tr{
+    vertical-align: middle;
+}
+
+header img {
+    width : 80%;
+    vertical-align: middle;
+}
+
+header td:first-child {
+    text-align:left;
+}
+
+header td:nth-child(2) img {
+    width : 100%;
+}
+
+header td:nth-child(3) {
+    text-align:right;
+}
+
+header a, header a:active, header a:visited {
+    text-decoration: none !important;
+}
+
+#title {
+    text-align: center;
+}
+
+#title h1 {
+    color: #e6ee9c;
+    font-size: 30px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+
+/* =Media Queries
+-------------------------------------------------------------- */
+@media all and (min-width: 1200px) and (max-width: 1440px) {
+    #title h1 {
+        font-size: 25px;
+        margin-top: -25px;
+        margin-bottom: 25px;
+    }
+}
+
+@media all and (min-width: 1000px) and (max-width: 1200px) {
+    #title h1 {
+        font-size: 20px;
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media all and (min-width: 720px) and (max-width: 1000px) {
+    #title h1 {
+        font-size: 15px;
+        margin-top: -15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media all and (min-width: 480px) and (max-width: 720px) {
+    #title h1 {
+        font-size: 15px;
+        margin-top: -30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (max-width: 720px) {
+
+    header td:nth-child(2) img {
+        width : 50%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    header td:first-child {
+        display:none;
+    }
+
+    header td:nth-child(3) {
+        display:none;
+    }
+}
+
+@media all and (max-width: 480px) {
+    #title h1 {
+        display:none;
+    }
+}

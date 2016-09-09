@@ -1,0 +1,21 @@
+{
+  "name": "myosine",
+  "authors": [
+    "Ugho Stephan <stephan.ugho@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "^0.5.10",
+    "fotorama": "^4.6.4"
+  }
+}

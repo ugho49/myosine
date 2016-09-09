@@ -1,0 +1,12 @@
+.form-signin {
+    padding: 10px 10px 5px 10px;
+}
+
+.form-signin p {
+    margin-top: 40px;
+}
+
+.admin_menu .thumbnail img {
+    height: 130px;
+    width: 130px;
+}

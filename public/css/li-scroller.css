@@ -1,0 +1,49 @@
+/* liScroll styles */
+#bandeau_title{
+    background-color: #689F38;
+    color:white;
+
+    width: 70px;
+    height: 40px;
+    padding-top: 6px;
+    text-align: center;
+    float: left;
+}
+
+.tickercontainer { /* the outer div with the black border */
+    border: 1px solid #689F38;
+    background: #fff;
+    width: auto;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+    position: relative;
+    top: 11px;
+    overflow: hidden;
+}
+
+ul.newsticker { /* that's your list */
+    position: relative;
+    font: bold 10px Verdana;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 100%;
+}
+ul.newsticker li {
+    float: left; /* important: display inline gives incorrect results when you check for elem's width */
+    margin-right: 140px;
+    padding: 0;
+    background: #fff;
+
+    white-space: nowrap;
+    padding: 0;
+}
+
+ul.newsticker .bandeauContent {
+    font-size: 13px;
+}
