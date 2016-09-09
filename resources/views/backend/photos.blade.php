@@ -1,8 +1,8 @@
 @extends('layouts.private')
 
 @section('style')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/basic.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/dropzone/dist/min/basic.min.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/dropzone/dist/min/dropzone.min.css">
 
     <style>
         .center-cropped {
@@ -55,7 +55,8 @@
 @endsection
 
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
+    <script src="{{URL::to('/')}}/bower_components/bootbox.js/bootbox.js"></script>
+    <script src="{{URL::to('/')}}/bower_components/dropzone/dist/min/dropzone.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -139,15 +140,22 @@
                     var name = button.data('name');
                     var url = base_url + name;
 
-                    remove_photo(name);
-                    $.get( url , function( data ) {
-                        if (data) {
-                            remove_photo(name);
-                        } else {
-                            alert('erreur interne intervenue lors de la suppression');
-                            button.removeAttr('disabled');
+                    bootbox.setLocale('fr');
+
+                    bootbox.confirm("Etes vous sur ?", function(result) {
+                        if (result) {
+                            $.get( url , function( data ) {
+                                if (data) {
+                                    remove_photo(name);
+                                } else {
+                                    alert('erreur interne intervenue lors de la suppression');
+                                    button.removeAttr('disabled');
+                                }
+                            });
                         }
+                        button.removeAttr('disabled');
                     });
+
                 });
             }
         });

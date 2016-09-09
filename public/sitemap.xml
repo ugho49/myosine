@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+    <url>
+        <loc>http://www.myosine-club-fitness-angers.fr/</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>http://www.myosine-club-fitness-angers.fr/tarifs_horaires</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://www.myosine-club-fitness-angers.fr/renseignements</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://www.myosine-club-fitness-angers.fr/photos</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://www.myosine-club-fitness-angers.fr/contact</loc>
+        <changefreq>always</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://www.myosine-club-fitness-angers.fr/terms</loc>
+        <priority>0.10</priority>
+    </url>
+</urlset>
