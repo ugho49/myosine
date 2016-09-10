@@ -16,7 +16,7 @@ return [
     'email'                => "Le champ :attribute n'est pas une adresse email valide.",
     'same'                 => 'Les champs ":attribute" et ":other" doivent correspondrent.',
     'date'                 => "Le champ :attribute n'est pas une date valide.",
-    'date_format'          => "Le champ :attribute n'est pas au format :format.",
+    'date_format'          => "Le champ :attribute n'est pas au bon format.",
     'max'                  => [
         'string' => 'Le champ :attribute ne doit pas dépasser :max caractères.'
     ],
@@ -26,6 +26,7 @@ return [
     ],
     'numeric'              => 'Le champ :attribute doit être un nombre.',
     'required'             => 'Le champ :attribute est obligatoire.',
+    'required_with'        => 'Le champ :attribute est requis quand le champ :values est renseigné.',
     'recaptcha'            => 'Il faut cliquer sur "Je ne suis pas un robot"'
 
 ];

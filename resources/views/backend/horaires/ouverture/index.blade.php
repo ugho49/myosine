@@ -1,10 +1,6 @@
 @extends('layouts.private')
 
 @section('content')
-    <p class="text-center">
-        <a href="{{ URL::route('admin_horaire_ouv.create') }}" class="btn btn-success btn-raised" role="button">Créer un nouvel horaire</a>
-    </p>
-
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="table-responsive">

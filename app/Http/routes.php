@@ -81,10 +81,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::group(['prefix' => 'ouvertures'], function () {
             Route::get('/', ['as' => 'admin_horaire_ouv', 'uses' => 'AdminHorairesOuvertureController@index']);
 
-            Route::get('/create', ['as' => 'admin_horaire_ouv.create', 'uses' => 'AdminHorairesOuvertureController@create']);
-
-            Route::post('/create', ['as' => 'admin_horaire_ouv.store', 'uses' => 'AdminHorairesOuvertureController@store']);
-
             Route::get('/{id}/edit', ['as' => 'admin_horaire_ouv.edit', 'uses' => 'AdminHorairesOuvertureController@edit']);
 
             Route::post('/{id}/edit', ['as' => 'admin_horaire_ouv.update', 'uses' => 'AdminHorairesOuvertureController@update']);
