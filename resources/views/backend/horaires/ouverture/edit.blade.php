@@ -37,14 +37,16 @@
                     </div>
                 </div>
 
-                <div class="form-group{{ $errors->has('horaire_debut') ? ' has-error' : '' }}">
-                    <label for="horaire_debut" class="control-label">Horaire Début :</label>
-                    <input type="text" class="form-control input-md" id="horaire_debut" placeholder="Horaire de début au format : ..h.." name="horaire_debut" value="@if( old('horaire_debut') ){{ old('horaire_debut') }}@elseif( $horaire->debut_horaire ){{ $horaire->debut_horaire }}@endif">
-                </div>
+                <div class="row">
+                    <div class="col-xs-6 form-group{{ $errors->has('horaire_debut') ? ' has-error' : '' }}">
+                        <label for="horaire_debut" class="control-label">Horaire Début :</label>
+                        <input type="text" class="form-control input-md" id="horaire_debut" placeholder="Horaire de début au format : ..h.." name="horaire_debut" value="@if( old('horaire_debut') ){{ old('horaire_debut') }}@elseif( $horaire->debut_horaire ){{ $horaire->debut_horaire }}@endif">
+                    </div>
 
-                <div class="form-group{{ $errors->has('horaire_fin') ? ' has-error' : '' }}">
-                    <label for="horaire_fin" class="control-label">Horaire Fin :</label>
-                    <input type="text" class="form-control input-md" id="horaire_fin" placeholder="Horaire de fin au format : ..h.." name="horaire_fin" value="@if( old('horaire_fin') ){{ old('horaire_fin') }}@elseif( $horaire->fin_horaire ){{ $horaire->fin_horaire }}@endif">
+                    <div class="col-xs-6 form-group{{ $errors->has('horaire_fin') ? ' has-error' : '' }}">
+                        <label for="horaire_fin" class="control-label">Horaire Fin :</label>
+                        <input type="text" class="form-control input-md" id="horaire_fin" placeholder="Horaire de fin au format : ..h.." name="horaire_fin" value="@if( old('horaire_fin') ){{ old('horaire_fin') }}@elseif( $horaire->fin_horaire ){{ $horaire->fin_horaire }}@endif">
+                    </div>
                 </div>
 
                 <div class="text-center">
