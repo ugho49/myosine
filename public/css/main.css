@@ -15,6 +15,10 @@ header, footer {
     background-color: #689F38 !important;
 }
 
+.breadcrumb a, .breadcrumb a:active, .breadcrumb a:visited, .breadcrumb a:hover {
+    color: #7CB342 !important;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-family: "Ubuntu", sans-serif !important;

@@ -3,10 +3,6 @@
 @section('title', 'Administration de la salle de sport Myosine')
 @section('description', "Administration et gestion du site Myosine. Page réservé uniquement aux administrateurs.")
 
-@section('style')
-    <link rel="stylesheet" href="{{URL::to('/')}}/css/admin.css">
-@endsection
-
 @section('admin_menu')
     @if (!Auth::guest())
         @if(Session::has('breadcrumb'))
@@ -21,6 +17,5 @@
                 @endfor
             </ol>
         @endif
-
     @endif
 @endsection

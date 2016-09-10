@@ -31,7 +31,7 @@
                         </div>
 
                         <p>
-                            <button class="btn btn-lg btn-primary btn-block btn-raised" type="submit">Connexion</button>
+                            <button class="btn btn-lg btn-info btn-block btn-raised" type="submit">Connexion</button>
                             <a href="#" class="btn btn-lg btn-warning btn-block" role="button" data-toggle="modal" data-target="#modalResetPassword">Mot de passe oublié</a>
                         </p>
                     </div>
