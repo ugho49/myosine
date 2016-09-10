@@ -58,7 +58,6 @@
 
 @section('script')
     <script src="{{URL::to('/')}}/bower_components/bootbox.js/bootbox.js"></script>
-    <script src="{{URL::to('/')}}/bower_components/dropzone/dist/min/dropzone.min.js"></script>
 
     <script>
         $(document).ready(function() {

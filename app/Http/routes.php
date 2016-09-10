@@ -39,37 +39,81 @@ Route::group(['prefix' => 'user'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
 
-    Route::get('/bandeau', ['as' => 'admin_bandeau', 'uses' => 'AdminBandeauController@index']);
+    Route::group(['prefix' => 'bandeau'], function () {
+        Route::get('/', ['as' => 'admin_bandeau', 'uses' => 'AdminBandeauController@index']);
 
-    Route::get('/bandeau/create', ['as' => 'admin_bandeau.create', 'uses' => 'AdminBandeauController@create']);
+        Route::get('/create', ['as' => 'admin_bandeau.create', 'uses' => 'AdminBandeauController@create']);
 
-    Route::post('/bandeau/create', ['as' => 'admin_bandeau.store', 'uses' => 'AdminBandeauController@store']);
+        Route::post('/create', ['as' => 'admin_bandeau.store', 'uses' => 'AdminBandeauController@store']);
 
-    Route::get('/bandeau/{id}/edit', ['as' => 'admin_bandeau.edit', 'uses' => 'AdminBandeauController@edit']);
+        Route::get('/{id}/edit', ['as' => 'admin_bandeau.edit', 'uses' => 'AdminBandeauController@edit']);
 
-    Route::post('/bandeau/{id}/edit', ['as' => 'admin_bandeau.update', 'uses' => 'AdminBandeauController@update']);
+        Route::post('/{id}/edit', ['as' => 'admin_bandeau.update', 'uses' => 'AdminBandeauController@update']);
 
-    Route::get('/bandeau/{id}/remove', ['as' => 'admin_bandeau.remove', 'uses' => 'AdminBandeauController@remove']);
+        Route::get('/{id}/remove', ['as' => 'admin_bandeau.remove', 'uses' => 'AdminBandeauController@remove']);
+    });
 
-    Route::get('/photo', ['as' => 'admin_photo', 'uses' => 'AdminPhotoController@index']);
+    Route::group(['prefix' => 'photo'], function () {
+        Route::get('/', ['as' => 'admin_photo', 'uses' => 'AdminPhotoController@index']);
 
-    Route::get('photo/all', ['as' => 'admin.photo.all', 'uses' => 'AdminPhotoController@findAll']);
+        Route::get('/all', ['as' => 'admin.photo.all', 'uses' => 'AdminPhotoController@findAll']);
 
-    Route::get('photo/remove/{name}', ['as' => 'admin.photo.remove', 'uses' => 'AdminPhotoController@delete']);
+        Route::get('/remove/{name}', ['as' => 'admin.photo.remove', 'uses' => 'AdminPhotoController@delete']);
 
-    Route::post('photo/upload', ['as' => 'admin.photo.upload', 'uses' => 'AdminPhotoController@upload']);
+        Route::post('/upload', ['as' => 'admin.photo.upload', 'uses' => 'AdminPhotoController@upload']);
+    });
 
-    Route::get('/tarif', ['as' => 'admin_tarif', 'uses' => 'AdminTarifController@index']);
+    Route::group(['prefix' => 'tarif'], function () {
+        Route::get('/', ['as' => 'admin_tarif', 'uses' => 'AdminTarifController@index']);
 
-    Route::get('/horaires/ouvertures', ['as' => 'admin_horaire_ouv', 'uses' => 'AdminHorairesOuvertureController@index']);
+        Route::get('/create', ['as' => 'admin_tarif.create', 'uses' => 'AdminTarifController@create']);
 
-    Route::get('/horaires/cours', ['as' => 'admin_horaire_cours', 'uses' => 'AdminHorairesCoursController@index']);
+        Route::post('/create', ['as' => 'admin_tarif.store', 'uses' => 'AdminTarifController@store']);
 
-    Route::get('/settings', ['as' => 'admin_settings', 'uses' => 'AdminSettingsController@index']);
+        Route::get('/{id}/edit', ['as' => 'admin_tarif.edit', 'uses' => 'AdminTarifController@edit']);
 
-    Route::post('/settings/edit/salle', ['as' => 'informations.update', 'uses' => 'AdminSettingsController@editSalle']);
+        Route::post('/{id}/edit', ['as' => 'admin_tarif.update', 'uses' => 'AdminTarifController@update']);
 
-    Route::post('/settings/edit/user', ['as' => 'user.update', 'uses' => 'UserController@edit']);
+        Route::get('/{id}/remove', ['as' => 'admin_tarif.remove', 'uses' => 'AdminTarifController@remove']);
+    });
 
-    Route::post('/settings/edit/user/password', ['as' => 'user.password.update', 'uses' => 'UserController@editPassword']);
+    Route::group(['prefix' => 'horaires'], function () {
+        Route::group(['prefix' => 'ouvertures'], function () {
+            Route::get('/', ['as' => 'admin_horaire_ouv', 'uses' => 'AdminHorairesOuvertureController@index']);
+
+            Route::get('/create', ['as' => 'admin_horaire_ouv.create', 'uses' => 'AdminHorairesOuvertureController@create']);
+
+            Route::post('/create', ['as' => 'admin_horaire_ouv.store', 'uses' => 'AdminHorairesOuvertureController@store']);
+
+            Route::get('/{id}/edit', ['as' => 'admin_horaire_ouv.edit', 'uses' => 'AdminHorairesOuvertureController@edit']);
+
+            Route::post('/{id}/edit', ['as' => 'admin_horaire_ouv.update', 'uses' => 'AdminHorairesOuvertureController@update']);
+
+            Route::get('/{id}/remove', ['as' => 'admin_horaire_ouv.remove', 'uses' => 'AdminHorairesOuvertureController@remove']);
+        });
+
+        Route::group(['prefix' => 'cours'], function () {
+            Route::get('/', ['as' => 'admin_horaire_cours', 'uses' => 'AdminHorairesCoursController@index']);
+
+            Route::get('/create', ['as' => 'admin_horaire_cours.create', 'uses' => 'AdminHorairesCoursController@create']);
+
+            Route::post('/create', ['as' => 'admin_horaire_cours.store', 'uses' => 'AdminHorairesCoursController@store']);
+
+            Route::get('/{id}/edit', ['as' => 'admin_horaire_cours.edit', 'uses' => 'AdminHorairesCoursController@edit']);
+
+            Route::post('/{id}/edit', ['as' => 'admin_horaire_cours.update', 'uses' => 'AdminHorairesCoursController@update']);
+
+            Route::get('/{id}/remove', ['as' => 'admin_horaire_cours.remove', 'uses' => 'AdminHorairesCoursController@remove']);
+        });
+    });
+
+    Route::group(['prefix' => 'settings'], function () {
+        Route::get('/', ['as' => 'admin_settings', 'uses' => 'AdminSettingsController@index']);
+
+        Route::post('/edit/salle', ['as' => 'informations.update', 'uses' => 'AdminSettingsController@editSalle']);
+
+        Route::post('/edit/user', ['as' => 'user.update', 'uses' => 'UserController@edit']);
+
+        Route::post('/edit/user/password', ['as' => 'user.password.update', 'uses' => 'UserController@editPassword']);
+    });
 });

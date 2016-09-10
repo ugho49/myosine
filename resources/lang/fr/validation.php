@@ -21,8 +21,10 @@ return [
         'string' => 'Le champ :attribute ne doit pas dépasser :max caractères.'
     ],
     'min'                  => [
-        'string' => 'Le champ :attribute doit faire au minimum :min caractères.'
+        'string' => 'Le champ :attribute doit faire au minimum :min caractères.',
+        'numeric' => 'Le champ :attribute doit faire au minimum :min.',
     ],
+    'numeric'              => 'Le champ :attribute doit être un nombre.',
     'required'             => 'Le champ :attribute est obligatoire.',
     'recaptcha'            => 'Il faut cliquer sur "Je ne suis pas un robot"'
 
