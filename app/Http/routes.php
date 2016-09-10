@@ -33,13 +33,23 @@ Route::group(['prefix' => 'user'], function () {
         Route::post('/password/reset', ['as' => 'password.reset', 'uses' => 'UserController@resetPassword']);
     });
 
-    Route::get('/logout', ['as' => 'logout', 'uses' => 'UserController@logout']);
+    Route::get('/logout', ['as' => 'logout', 'uses' => 'UserController@logout', 'middleware' => 'auth']);
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', ['as' => 'admin', 'uses' => 'AdminController@index']);
 
     Route::get('/bandeau', ['as' => 'admin_bandeau', 'uses' => 'AdminBandeauController@index']);
+
+    Route::get('/bandeau/create', ['as' => 'admin_bandeau.create', 'uses' => 'AdminBandeauController@create']);
+
+    Route::post('/bandeau/create', ['as' => 'admin_bandeau.store', 'uses' => 'AdminBandeauController@store']);
+
+    Route::get('/bandeau/{id}/edit', ['as' => 'admin_bandeau.edit', 'uses' => 'AdminBandeauController@edit']);
+
+    Route::post('/bandeau/{id}/edit', ['as' => 'admin_bandeau.update', 'uses' => 'AdminBandeauController@update']);
+
+    Route::get('/bandeau/{id}/remove', ['as' => 'admin_bandeau.remove', 'uses' => 'AdminBandeauController@remove']);
 
     Route::get('/photo', ['as' => 'admin_photo', 'uses' => 'AdminPhotoController@index']);
 
@@ -51,9 +61,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('/tarif', ['as' => 'admin_tarif', 'uses' => 'AdminTarifController@index']);
 
-    Route::get('/horaires_ouvertures', ['as' => 'admin_horaire_ouv', 'uses' => 'AdminHorairesOuvertureController@index']);
+    Route::get('/horaires/ouvertures', ['as' => 'admin_horaire_ouv', 'uses' => 'AdminHorairesOuvertureController@index']);
 
-    Route::get('/horaires_cours', ['as' => 'admin_horaire_cours', 'uses' => 'AdminHorairesCoursController@index']);
+    Route::get('/horaires/cours', ['as' => 'admin_horaire_cours', 'uses' => 'AdminHorairesCoursController@index']);
 
     Route::get('/settings', ['as' => 'admin_settings', 'uses' => 'AdminSettingsController@index']);
 

@@ -15,6 +15,8 @@ return [
 
     'email'                => "Le champ :attribute n'est pas une adresse email valide.",
     'same'                 => 'Les champs ":attribute" et ":other" doivent correspondrent.',
+    'date'                 => "Le champ :attribute n'est pas une date valide.",
+    'date_format'          => "Le champ :attribute n'est pas au format :format.",
     'max'                  => [
         'string' => 'Le champ :attribute ne doit pas dépasser :max caractères.'
     ],
