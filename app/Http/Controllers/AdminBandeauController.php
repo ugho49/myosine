@@ -9,10 +9,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
-class AdminBandeauController extends Controller
+class AdminBandeauController extends AbstractAdminController
 {
+
+    public function __construct() {
+        parent::__construct();
+        $this->addBreadcrumb("Gestion Bandeau", URL::route('admin_bandeau'));
+    }
+
     public function index() {
         $bandeaux = Bandeau::orderBy('date_create_sb', "ASC")
             ->orderBy('date_fin_sb', "DESC")
@@ -23,6 +30,7 @@ class AdminBandeauController extends Controller
 
     public function edit($id) {
         $bandeau = Bandeau::findOrFail($id);
+        $this->addBreadcrumb("Modifier un Bandeau", URL::route('admin_bandeau.edit', $id));
         return view('backend.bandeau.bandeau', ["action" => "edit", "bandeau" => $bandeau]);
     }
 
@@ -58,6 +66,7 @@ class AdminBandeauController extends Controller
 
     public function create() {
         $bandeau = new Bandeau();
+        $this->addBreadcrumb("Créer un Bandeau", URL::route('admin_bandeau.create'));
         return view('backend.bandeau.bandeau', ["action" => "create", "bandeau" => $bandeau]);
     }
 

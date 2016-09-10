@@ -8,8 +8,13 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\URL;
 
-class AdminPhotoController extends Controller
+class AdminPhotoController extends AbstractAdminController
 {
+    public function __construct() {
+        parent::__construct();
+        $this->addBreadcrumb("Gestion des Photos", URL::route('admin_photo'));
+    }
+
     public function index() {
         $service = new PhotoService();
 

@@ -10,9 +10,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
-class AdminHorairesCoursController extends Controller
+class AdminHorairesCoursController extends AbstractAdminController
 {
     private $jours = [
         ["num" => 1, "name" => "Lundi"],
@@ -34,6 +35,11 @@ class AdminHorairesCoursController extends Controller
         return null;
     }
 
+    public function __construct() {
+        parent::__construct();
+        $this->addBreadcrumb("Gestion des horaires de cours", URL::route('admin_horaire_cours'));
+    }
+
     public function index() {
         $horairesCours = HoraireCours::orderBy('num_jour')->get();
 
@@ -43,6 +49,7 @@ class AdminHorairesCoursController extends Controller
     public function edit($id) {
         $horaire = HoraireCours::findOrFail($id);
         $types = TypeCours::all();
+        $this->addBreadcrumb("Modifier un horaire de cours", URL::route('admin_horaire_cours.edit', $id));
         return view('backend.horaires.cours.cours', ["action" => "edit", "jours" => $this->jours, "horaire" => $horaire, "types" => $types]);
     }
 
@@ -75,6 +82,7 @@ class AdminHorairesCoursController extends Controller
     public function create() {
         $horaire = new HoraireCours();
         $types = TypeCours::all();
+        $this->addBreadcrumb("Créer un horaire de cours", URL::route('admin_horaire_cours.create'));
         return view('backend.horaires.cours.cours', ["action" => "create", "jours" => $this->jours, "horaire" => $horaire, "types" => $types]);
     }
 

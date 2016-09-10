@@ -76,8 +76,6 @@
 
                 var url = buttonDelete.attr('href');
 
-                console.log(url);
-
                 bootbox.setLocale('fr');
 
                 bootbox.confirm("Etes vous sur ?", function(result) {

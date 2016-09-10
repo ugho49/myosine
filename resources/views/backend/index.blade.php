@@ -64,3 +64,21 @@
         </div>
     </div>
 @endsection
+
+@section('admin_menu')
+    @if (!Auth::guest())
+        <br>
+        <div class="row">
+            <div class="col-lg-10 col-md-9 col-sm-9 col-xs-7">
+                <p>Connecté : {{ Auth::user()->name }}</p>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5">
+                <a href="{{ URL::route('logout') }}" class="btn btn-danger btn-raised btn-sm" role="button" style="margin: 0px;">
+                    Déconnexion
+                </a>
+            </div>
+        </div>
+        <hr style="margin-bottom: 10px; margin-top: 0px;">
+    @endif
+
+@endsection

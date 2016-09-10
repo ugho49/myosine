@@ -5,11 +5,6 @@
 @endsection
 
 @section('content')
-
-    <p class="text-center">
-        <a class="btn btn-lg btn-raised" href="{{ URL::route('admin_horaire_cours') }}">Retour</a>
-    </p>
-
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
             @if (count($errors) > 0)
@@ -66,16 +61,18 @@
                 <div class="row">
                     <div class="col-xs-6 form-group{{ $errors->has('horaire_debut') ? ' has-error' : '' }}">
                         <label for="horaire_debut" class="control-label">Horaire Début :</label>
-                        <input type="text" class="form-control input-md" id="horaire_debut" placeholder="Horaire de début au format : ..h.." name="horaire_debut" value="@if( old('horaire_debut') ){{ old('horaire_debut') }}@elseif( $horaire->debut_cours ){{ $horaire->debut_cours }}@endif">
+                        <input type="text" class="form-control input-md" id="horaire_debut" required="required" placeholder="Horaire de début au format : ..h.." name="horaire_debut" value="@if( old('horaire_debut') ){{ old('horaire_debut') }}@elseif( $horaire->debut_cours ){{ $horaire->debut_cours }}@endif">
                     </div>
 
                     <div class="col-xs-6 form-group{{ $errors->has('horaire_fin') ? ' has-error' : '' }}">
                         <label for="horaire_fin" class="control-label">Horaire Fin :</label>
-                        <input type="text" class="form-control input-md" id="horaire_fin" placeholder="Horaire de fin au format : ..h.." name="horaire_fin" value="@if( old('horaire_fin') ){{ old('horaire_fin') }}@elseif( $horaire->fin_cours ){{ $horaire->fin_cours }}@endif">
+                        <input type="text" class="form-control input-md" id="horaire_fin" required="required" placeholder="Horaire de fin au format : ..h.." name="horaire_fin" value="@if( old('horaire_fin') ){{ old('horaire_fin') }}@elseif( $horaire->fin_cours ){{ $horaire->fin_cours }}@endif">
                     </div>
                 </div>
 
                 <div class="text-center">
+                    <a class="btn btn-lg btn-raised" href="{{ URL::route('admin_horaire_cours') }}">Retour</a>
+
                     @if($action == 'edit')
                         <button class="btn btn-raised btn-info btn-lg" type="submit">Modifier</button>
                     @elseif($action == 'create')

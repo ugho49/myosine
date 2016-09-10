@@ -9,10 +9,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
-class AdminHorairesOuvertureController extends Controller
+class AdminHorairesOuvertureController extends AbstractAdminController
 {
+    public function __construct() {
+        parent::__construct();
+        $this->addBreadcrumb("Gestion des horaires d'ouverture", URL::route('admin_horaire_ouv'));
+    }
+
     public function index() {
         $horairesOuverture = HoraireOuverture::orderBy('num_jour', 'ASC')
             ->orderBy("isMatin_horaire", "DESC")
@@ -23,6 +29,7 @@ class AdminHorairesOuvertureController extends Controller
 
     public function edit($id) {
         $horaire = HoraireOuverture::findOrFail($id);
+        $this->addBreadcrumb("Modifier un horaire d'ouverture", URL::route('admin_horaire_ouv.edit', $id));
         return view('backend.horaires.ouverture.edit', ["horaire" => $horaire]);
     }
 

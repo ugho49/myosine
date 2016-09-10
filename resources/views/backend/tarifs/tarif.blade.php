@@ -1,11 +1,6 @@
 @extends('layouts.private')
 
 @section('content')
-
-    <p class="text-center">
-        <a class="btn btn-lg btn-raised" href="{{ URL::route('admin_tarif') }}">Retour</a>
-    </p>
-
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
             @if (count($errors) > 0)
@@ -37,6 +32,8 @@
                 </div>
 
                 <div class="text-center">
+                    <a class="btn btn-lg btn-raised" href="{{ URL::route('admin_tarif') }}">Retour</a>
+
                     @if($action == 'edit')
                         <button class="btn btn-raised btn-info btn-lg" type="submit">Modifier</button>
                     @elseif($action == 'create')

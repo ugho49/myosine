@@ -1,6 +1,7 @@
 @extends('layouts.private')
 
 @section('content')
+    <br>
     <div class="row">
         <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
             <form method="post" action="{{ URL::route('login') }}">
@@ -38,8 +39,6 @@
             </form>
         </div>
     </div>
-
-
 
     <div class="modal" id="modalResetPassword" aria-hidden="true" role="dialog">
         <form method="post" action="{{ URL::route('password.reset') }}">

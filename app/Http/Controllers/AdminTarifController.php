@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
-class AdminTarifController extends Controller
+class AdminTarifController extends AbstractAdminController
 {
+    public function __construct() {
+        parent::__construct();
+        $this->addBreadcrumb("Gestion des Tarifs", URL::route('admin_tarif'));
+    }
+
     public function index() {
         $tarifs = Tarif::orderBy(DB::raw("substr(nom_tarif,1,1)"))
             ->orderBy("prix_tarif")
@@ -24,6 +30,7 @@ class AdminTarifController extends Controller
 
     public function edit($id) {
         $tarif = Tarif::findOrFail($id);
+        $this->addBreadcrumb("Modifier le tarif", URL::route('admin_tarif.edit', $id));
         return view('backend.tarifs.tarif', ["action" => "edit", "tarif" => $tarif]);
     }
 
@@ -56,6 +63,7 @@ class AdminTarifController extends Controller
 
     public function create() {
         $tarif = new Tarif();
+        $this->addBreadcrumb("Créer un tarif", URL::route('admin_tarif.create'));
         return view('backend.tarifs.tarif', ["action" => "create", "tarif" => $tarif]);
     }
 

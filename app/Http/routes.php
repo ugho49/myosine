@@ -100,6 +100,20 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             Route::post('/{id}/edit', ['as' => 'admin_horaire_cours.update', 'uses' => 'AdminHorairesCoursController@update']);
 
             Route::get('/{id}/remove', ['as' => 'admin_horaire_cours.remove', 'uses' => 'AdminHorairesCoursController@remove']);
+
+            Route::group(['prefix' => 'type'], function () {
+                Route::get('/', ['as' => 'admin_type_cours', 'uses' => 'AdminHorairesTypeCoursController@index']);
+
+                Route::get('/create', ['as' => 'admin_type_cours.create', 'uses' => 'AdminHorairesTypeCoursController@create']);
+
+                Route::post('/create', ['as' => 'admin_type_cours.store', 'uses' => 'AdminHorairesTypeCoursController@store']);
+
+                Route::get('/{id}/edit', ['as' => 'admin_type_cours.edit', 'uses' => 'AdminHorairesTypeCoursController@edit']);
+
+                Route::post('/{id}/edit', ['as' => 'admin_type_cours.update', 'uses' => 'AdminHorairesTypeCoursController@update']);
+
+                Route::get('/{id}/remove', ['as' => 'admin_type_cours.remove', 'uses' => 'AdminHorairesTypeCoursController@remove']);
+            });
         });
     });
 

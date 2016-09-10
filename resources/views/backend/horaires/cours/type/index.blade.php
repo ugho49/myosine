@@ -2,8 +2,8 @@
 
 @section('content')
     <p class="text-center">
-        <a href="{{ URL::route('admin_type_cours') }}" class="btn btn-info btn-raised" role="button">Gérer les types de cours</a>
-        <a href="{{ URL::route('admin_horaire_cours.create') }}" class="btn btn-success btn-raised" role="button">Créer un nouvel horaire</a>
+        <!--<a href="{{ URL::route('admin_horaire_cours') }}" class="btn btn-raised" role="button">Retour</a>-->
+        <a href="{{ URL::route('admin_type_cours.create') }}" class="btn btn-success btn-raised" role="button">Créer un nouveau type de cours</a>
     </p>
 
     <div class="row">
@@ -12,25 +12,19 @@
                 <table class="table table-hover table-striped">
                     <thead>
                     <tr class="text-center">
-                        <th>Jour</th>
-                        <th>Début</th>
-                        <th>Fin</th>
-                        <th>Type de cours</th>
+                        <th>Nom du cours</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($horaires as $horaire)
-                        <tr data-id="{{ $horaire->id_cours }}">
-                            <td>{{ $horaire->jour_cours }}</td>
-                            <td>{{ $horaire->debut_cours }}</td>
-                            <td>{{ $horaire->fin_cours }}</td>
-                            <td>{{ $horaire->type->libelle_typeC }}</td>
+                    @foreach($types as $type)
+                        <tr data-id="{{ $type->id_typeC }}">
+                            <td>{{ $type->libelle_typeC }}</td>
                             <td>
-                                <a style="margin: 0px;" data-id="{{ $horaire->id_cours }}" class="btn btn-info edit_horaire" href="{{ URL::route('admin_horaire_cours.edit', $horaire->id_cours) }}">
+                                <a style="margin: 0px;" data-id="{{ $type->id_typeC }}" class="btn btn-info edit_type" href="{{ URL::route('admin_type_cours.edit', $type->id_typeC) }}">
                                     Modifier
                                 </a>
-                                <a style="margin: 0px;" data-id="{{ $horaire->id_cours }}" class="btn btn-danger remove_horaire" href="{{ URL::route('admin_horaire_cours.remove', $horaire->id_cours) }}">
+                                <a style="margin: 0px;" data-id="{{ $type->id_typeC }}" class="btn btn-danger remove_type" href="{{ URL::route('admin_type_cours.remove', $type->id_typeC) }}">
                                     Supprimer
                                 </a>
                             </td>
@@ -49,13 +43,13 @@
     <script>
         $(document).ready(function() {
 
-            $('.remove_horaire:not("disabled")').click(function(e) {
+            $('.remove_type:not("disabled")').click(function(e) {
 
                 e.preventDefault();
 
                 var buttonDelete = $(this);
                 var id = buttonDelete.data('id');
-                var buttonEdit = $('a.edit_horaire[data-id="'+ id +'"]');
+                var buttonEdit = $('a.edit_type[data-id="'+ id +'"]');
 
                 if (buttonDelete.attr('disabled')) {
                     return;
@@ -70,11 +64,11 @@
 
                 bootbox.confirm("Etes vous sur ?", function(result) {
                     if (result) {
-                        $.get( url , function( data ) {
-                            if (data) {
-                                remove_horaire(id);
+                        $.get( url , function( res ) {
+                            if (!res.error) {
+                                remove_type(id);
                             } else {
-                                alert('erreur interne intervenue lors de la suppression');
+                                bootbox.alert(res.message);
                                 buttonDelete.removeAttr('disabled');
                                 buttonEdit.removeAttr('disabled');
                             }
@@ -86,7 +80,7 @@
 
             });
 
-            function remove_horaire (id) {
+            function remove_type (id) {
                 var tr = $('tr[data-id="'+ id +'"]');
                 tr.fadeOut(300, function() {
                     $(this).remove();

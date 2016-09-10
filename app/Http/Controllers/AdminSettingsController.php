@@ -7,10 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Validator;
 
-class AdminSettingsController extends Controller
+class AdminSettingsController extends AbstractAdminController
 {
+    public function __construct() {
+        parent::__construct();
+        $this->addBreadcrumb("Paramètres", URL::route('admin_settings'));
+    }
+
     public function index() {
         $information = Session::get('informations');
         $user = Auth::user();
