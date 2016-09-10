@@ -70,7 +70,15 @@
 
             $('#horaire_fin').datetimepicker({
                 locale: 'fr',
-                format: 'HH[h]mm'
+                format: 'HH[h]mm',
+                useCurrent: false
+            });
+
+            $("#horaire_debut").on("dp.change", function (e) {
+                $('#horaire_fin').data("DateTimePicker").minDate(e.date);
+            });
+            $("#horaire_fin").on("dp.change", function (e) {
+                $('#horaire_debut').data("DateTimePicker").maxDate(e.date);
             });
         });
     </script>

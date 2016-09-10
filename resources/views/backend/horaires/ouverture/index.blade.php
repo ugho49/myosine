@@ -18,8 +18,15 @@
                     @foreach($horaires as $horaire)
                         <tr data-id="{{ $horaire->id_horaire }}">
                             <td>{{ $horaire->jour_horaire }}</td>
-                            <td class="horaire_removable">{{ $horaire->debut_horaire }}</td>
-                            <td class="horaire_removable">{{ $horaire->fin_horaire }}</td>
+
+                            @if($horaire->debut_horaire)
+                                <td class="horaire_removable">{{ $horaire->debut_horaire }}</td>
+                                <td class="horaire_removable">{{ $horaire->fin_horaire }}</td>
+                            @else
+                                <td>-</td>
+                                <td>-</td>
+                            @endif
+
 
                             @if($horaire->isMatin_horaire)
                                 <td>Matin</td>
@@ -31,9 +38,11 @@
                                 <a style="margin: 0px;" data-id="{{ $horaire->id_horaire }}" class="btn btn-info edit_horaire" href="{{ URL::route('admin_horaire_ouv.edit', $horaire->id_horaire) }}">
                                     Modifier
                                 </a>
-                                <a style="margin: 0px;" data-id="{{ $horaire->id_horaire }}" class="btn btn-danger remove_horaire" href="{{ URL::route('admin_horaire_ouv.remove', $horaire->id_horaire) }}">
-                                    Supprimer
-                                </a>
+                                @if($horaire->debut_horaire)
+                                    <a style="margin: 0px;" data-id="{{ $horaire->id_horaire }}" class="btn btn-danger remove_horaire" href="{{ URL::route('admin_horaire_ouv.remove', $horaire->id_horaire) }}">
+                                        Supprimer
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
@@ -93,8 +102,11 @@
                 var td = $('tr[data-id="'+ id +'"] td.horaire_removable');
 
                 td.each(function() {
-                    $(this).html('');
+                    $(this).html('-');
                 });
+
+                var buttonDelete = $('tr[data-id="'+ id +'"] a.remove_horaire');
+                buttonDelete.hide();
             }
         });
     </script>
