@@ -98,17 +98,17 @@
                     <form method="post" action="{{ URL::route('user.password.update') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('old_password') ? ' has-error' : '' }}">
                             <label for="old_password" class="control-label">Ancien mot de passe :</label>
                             <input type="password" class="form-control input-md" id="old_password" placeholder="Ancien mot de passe" name="old_password" required="required">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="control-label">Nouveau mot de passe :</label>
                             <input type="password" class="form-control input-md" id="password" placeholder="Nouveau mot de passe" name="password" required="required">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('password_confirm') ? ' has-error' : '' }}">
                             <label for="password_confirm" class="control-label">Répéter le nouveau mot de passe :</label>
                             <input type="password" class="form-control input-md" id="password_confirm" placeholder="Répéter le nouveau mot de passe" name="password_confirm" required="required">
                         </div>
