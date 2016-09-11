@@ -16,5 +16,7 @@ return [
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'disabled' => 'Sorry this user is disabled.',
+    'insufficient_rights' => 'Insufficient rights to access this page.',
+    'not_logged' => 'You are not logged.',
 
 ];

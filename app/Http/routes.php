@@ -126,4 +126,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
         Route::post('/edit/user/password', ['as' => 'user.password.update', 'uses' => 'UserController@editPassword']);
     });
+
+    Route::group(['prefix' => 'users', 'middleware' => 'role:root'], function () {
+        Route::get('/', ['as' => 'admin_users', 'uses' => 'AdminUsersController@index']);
+    });
 });

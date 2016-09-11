@@ -14,6 +14,9 @@ return [
     */
 
     'failed' => 'Les informations de connexion sont incorrectes',
+    'throttle' => "Trop d'essais de login. Merci de réessayer dans :seconds secondes.",
     'disabled' => 'Désolé, cet utilisateur est désactivé.',
+    'insufficient_rights' => 'Droits insuffisants pour accèder à cette page.',
+    'not_logged' => 'Vous devez être connecté pour accèder à cette page.',
 
 ];

@@ -57,9 +57,10 @@ class UserController extends Controller
 
             Auth::logout();
 
-            return redirect()->route('login')
-                ->withErrors(Lang::get('auth.disabled'))
-                ->withInput();
+            Session::flash('flash_message', Lang::get('auth.disabled'));
+            Session::flash('flash_type', 'warning');
+            
+            return redirect()->route('login');
         }
 
         return redirect()->route('login')

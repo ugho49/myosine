@@ -1,5 +1,7 @@
 @extends('layouts.private')
 
+@section('section_title', 'Administration')
+
 @section('content')
     <br>
     <div class="row">
