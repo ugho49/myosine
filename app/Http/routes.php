@@ -129,5 +129,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'users', 'middleware' => 'role:root'], function () {
         Route::get('/', ['as' => 'admin_users', 'uses' => 'AdminUsersController@index']);
+
+        Route::get('/create', ['as' => 'admin_users.create', 'uses' => 'AdminUsersController@create']);
+
+        Route::post('/create', ['as' => 'admin_users.store', 'uses' => 'AdminUsersController@store']);
+
+        Route::get('/{id}/edit', ['as' => 'admin_users.edit', 'uses' => 'AdminUsersController@edit']);
+
+        Route::post('/{id}/edit', ['as' => 'admin_users.update', 'uses' => 'AdminUsersController@update']);
+
+        Route::get('/{id}/activate', ['as' => 'admin_users.activate', 'uses' => 'AdminUsersController@activate']);
+
+        Route::get('/{id}/desactivate', ['as' => 'admin_users.desactivate', 'uses' => 'AdminUsersController@desactivate']);
     });
 });

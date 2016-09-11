@@ -28,14 +28,11 @@ trait HasRoles
      */
     public function assignRole($role)
     {
-        if ($this->hasRole($role)) {
-            return false;
-        }
-
-        return $this->roles()->save(
+        $this->roles()->save(
             Role::whereName($role)->firstOrFail()
         );
     }
+
     /**
      * Determine if the user has the given role.
      *
@@ -48,6 +45,10 @@ trait HasRoles
             return $this->roles->contains('name', $role);
         }
         return !! $role->intersect($this->roles)->count();
+    }
+
+    public function getRoles() {
+        return $this->roles;
     }
 
     public function countRoles()
@@ -64,6 +65,16 @@ trait HasRoles
         if ($this->countRoles() > 1) {
             return $this->roles()->detach(
                 Role::whereName($role)->firstOrFail()
+            );
+        }
+    }
+
+    public function removeAllRoles()
+    {
+        $roles = $this->roles;
+        foreach ($roles as $role) {
+            $this->roles()->detach(
+                Role::whereName($role->name)->firstOrFail()
             );
         }
     }
