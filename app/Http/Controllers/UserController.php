@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -38,17 +39,27 @@ class UserController extends Controller
 
         if (Auth::attempt(['email' => Input::get('email'), 'password' => Input::get('password')])) {
 
-            // success
-            Session::flash('flash_message', 'Vous êtes connecté avec succès.');
-            Session::flash('flash_type', 'success');
-
             $user = Auth::user();
-            $user->last_ip = $_SERVER["REMOTE_ADDR"];
-            $user->save();
 
-            Auth::setUser($user);
+            if ($user->enabled) {
+                // success
+                Session::flash('flash_message', 'Vous êtes connecté avec succès.');
+                Session::flash('flash_type', 'success');
 
-            return redirect()->route('admin');
+                $user->last_ip = $_SERVER["REMOTE_ADDR"];
+                $user->last_connexion = Carbon::now();
+                $user->save();
+
+                Auth::setUser($user);
+
+                return redirect()->route('admin');
+            }
+
+            Auth::logout();
+
+            return redirect()->route('login')
+                ->withErrors(Lang::get('auth.disabled'))
+                ->withInput();
         }
 
         return redirect()->route('login')

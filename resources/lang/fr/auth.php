@@ -13,6 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Les informations de connexion sont incorrectes'
+    'failed' => 'Les informations de connexion sont incorrectes',
+    'disabled' => 'Désolé, cet utilisateur est désactivé.',
 
 ];
