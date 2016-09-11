@@ -1,7 +1,7 @@
 <div id="maildecontact" style="background-color:white;font-family: arial,sans-serif;">
     <div id="bandeaumaildecontact" style="background-color: #689F38;text-align: center;color: white;padding: 0.5px;">
         <h1 style="margin-bottom: 0px;line-height: inherit;font-weight: bold;margin: 5px 15px; line-height: inherit;">
-            Myosine - Page de contact
+            Myosine - Réinitialisation de mot de passe
         </h1>
     </div>
     <div id="contenuemaildecontact" style="padding: 5px;">

@@ -26,6 +26,7 @@ return [
         'numeric' => 'Le champ :attribute doit faire au minimum :min.',
     ],
     'numeric'              => 'Le champ :attribute doit être un nombre.',
+    'unique'               => 'Le champ :attribute est déjà utilisé en base.',
     'required'             => 'Le champ :attribute est obligatoire.',
     'required_with'        => 'Le champ :attribute est requis quand le champ :values est renseigné.',
     'recaptcha'            => 'Il faut cliquer sur "Je ne suis pas un robot"'

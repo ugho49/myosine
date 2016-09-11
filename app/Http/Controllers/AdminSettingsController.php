@@ -27,7 +27,7 @@ class AdminSettingsController extends AbstractAdminController
     public function editSalle(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'email' => 'email|required',
+            'email_contact' => 'email|required',
             'phone' => 'required|max:20',
             'adresse' => 'required|max:100'
         ]);
@@ -45,7 +45,7 @@ class AdminSettingsController extends AbstractAdminController
         $information = Session::get('informations');
         $information->tel_salle = Input::get('phone');
         $information->adresse_salle = Input::get('adresse');
-        $information->mail_salle = Input::get('email');
+        $information->mail_salle = Input::get('email_contact');
         $information->save();
 
         return redirect()->route('admin_settings');

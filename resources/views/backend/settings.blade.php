@@ -37,19 +37,19 @@
                     <form method="post" action="{{ URL::route('informations.update') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="control-label">Téléphone :</label>
                             <input type="text" class="form-control input-md" id="phone" placeholder="Téléphone" name="phone" value="{{ $informations->tel_salle }}" required="required">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('adresse') ? ' has-error' : '' }}">
                             <label for="adresse" class="control-label">Adresse :</label>
                             <textarea class="form-control input-md" id="adresse" placeholder="Adresse de la salle" name="adresse" required="required">{{ $informations->adresse_salle }}</textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="control-label">Email pour la page de contact :</label>
-                            <input type="email" class="form-control input-md" id="email" placeholder="Email pour la page de contact" name="email" value="{{ $informations->mail_salle }}" required="required">
+                        <div class="form-group{{ $errors->has('email_contact') ? ' has-error' : '' }}">
+                            <label for="email_contact" class="control-label">Email pour la page de contact :</label>
+                            <input type="email" class="form-control input-md" id="email_contact" placeholder="Email pour la page de contact" name="email_contact" value="{{ $informations->mail_salle }}" required="required">
                         </div>
 
                         <div class="text-center">
@@ -64,12 +64,12 @@
                     <form method="post" action="{{ URL::route('user.update') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label">Prénom - NOM :</label>
                             <input type="text" class="form-control input-md" id="name" placeholder="Prénom NOM" name="name" value="{{ $user->name }}" required="required">
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="control-label">Email :</label>
                             <input type="email" class="form-control input-md" id="email" placeholder="email" name="email" value="{{ $user->email }}" required="required">
                         </div>

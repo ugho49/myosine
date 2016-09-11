@@ -61,7 +61,7 @@ class UserController extends Controller
         $current_user = Auth::user();
 
         $validator = Validator::make($request->all(), [
-            'email' => 'email|required',
+            'email' => 'email|required|unique:users,email,'.$current_user->id,
             'name' => 'required'
         ]);
 
