@@ -141,7 +141,7 @@ class UserController extends Controller
     public function resetPassword(Request $request) {
 
         $validator = Validator::make($request->all(), [
-            'email' => 'email|required'
+            'email' => 'required|email'
         ]);
 
         if ($validator->fails()) {

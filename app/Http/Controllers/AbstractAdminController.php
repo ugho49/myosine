@@ -14,7 +14,7 @@ abstract class AbstractAdminController extends Controller
         parent::__construct();
 
         $this->removeBreadcrumbSession();
-        $this->addBreadcrumb("Accueil", URL::route('admin'));
+        $this->addBreadcrumb("Administration", URL::route('admin'));
     }
 
     protected function removeBreadcrumbSession() {

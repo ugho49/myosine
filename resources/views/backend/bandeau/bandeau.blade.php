@@ -27,7 +27,7 @@
 
                 <div class="form-group{{ $errors->has('date_fin') ? ' has-error' : '' }}">
                     <label for="date_fin" class="control-label">Date de fin (Laisser vide si le message est permanent) :</label>
-                    <input type="text" class="form-control input-md" id="date_fin" placeholder="Date de fin" name="date_fin" value="@if( old('date_fin') ) {{ old('date_fin') }} @elseif( $bandeau->date_fin_sb ) {{ date_format(date_create_from_format('Y-m-d', $bandeau->date_fin_sb), 'd/m/Y')}} @endif">
+                    <input type="text" class="form-control input-md" id="date_fin" placeholder="Date de fin" name="date_fin" value="@if( old('date_fin') ){{ old('date_fin') }}@elseif( $bandeau->date_fin_sb ){{ date_format(date_create_from_format('Y-m-d', $bandeau->date_fin_sb), 'd/m/Y')}}@endif">
                 </div>
 
                 <div class="text-center">
@@ -53,9 +53,11 @@
     <script type="text/javascript">
         $(function () {
             $('#date_fin').datetimepicker({
+                useCurrent: false,
                 locale: 'fr',
                 format: 'DD/MM/YYYY',
-                minDate: moment()
+                minDate: moment(),
+                disabledDates: [moment()]
             });
         });
     </script>

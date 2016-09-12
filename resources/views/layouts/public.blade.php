@@ -30,6 +30,7 @@
     <meta name="author" content="Ugho STEPHAN">
     <meta name="publisher" content="Ugho STEPHAN">
     <meta name="copyright" content="Ugho STEPHAN">
+    <meta name="theme-color" content="#689F38">
     <meta name="description" content="@yield('description', 'Salle de sport sur Angers - Musculation, fitness, sauna, ...')" />
     <link rel="shortcut icon" href="{{URL::to('/')}}/favicon.png" type="image/icon">
 </head>
