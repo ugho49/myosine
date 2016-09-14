@@ -76,7 +76,7 @@
                     @if($action == 'edit')
                         <button class="btn btn-raised btn-info btn-lg" type="submit">Modifier</button>
                     @elseif($action == 'create')
-                        <button class="btn btn-raised btn-success btn-lg" type="submit">Créer</button>
+                        <button class="btn btn-raised btn-success btn-lg button-create" type="submit">Créer</button>
                     @endif
                 </div>
 
@@ -91,7 +91,11 @@
     <script type="text/javascript" src="{{URL::to('/')}}/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
     <script type="text/javascript">
-        $(function () {
+        $(document).ready(function() {
+            $('form').submit(function(){
+                $('button.button-create').attr('disabled','disabled');
+            });
+
             $('#horaire_debut').datetimepicker({
                 locale: 'fr',
                 format: 'HH[h]mm'

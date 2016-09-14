@@ -37,11 +37,21 @@
                     @if($action == 'edit')
                         <button class="btn btn-raised btn-info btn-lg" type="submit">Modifier</button>
                     @elseif($action == 'create')
-                        <button class="btn btn-raised btn-success btn-lg" type="submit">Créer</button>
+                        <button class="btn btn-raised btn-success btn-lg button-create" type="submit">Créer</button>
                     @endif
                 </div>
 
             </form>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(){
+                $('button.button-create').attr('disabled','disabled');
+            });
+        });
+    </script>
 @endsection
