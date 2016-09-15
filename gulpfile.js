@@ -30,6 +30,12 @@ elixir(function(mix) {
 
     mix.stylesIn('resources/assets/styles'); // generate all.css
 
+    // copy font for bootstrap
+    mix.copy('resources/assets/components/bootstrap/fonts', 'public/build/fonts');
+    // copy images for fotorama
+    mix.copy('resources/assets/components/fotorama/fotorama.png', 'public/build/css/fotorama.png');
+    mix.copy('resources/assets/components/fotorama/fotorama@2x.png', 'public/build/css/fotorama@2x.png');
+
     mix.scripts([
         'jquery/dist/jquery.min.js',
         'bootstrap/dist/js/bootstrap.min.js',
