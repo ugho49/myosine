@@ -4,8 +4,8 @@
     <title>@yield('title', 'Salle de sport , de musculation, de fitness, Myosine, sur Angers')</title>
 
     <!-- Fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ URL::to('/') . elixir('css/vendor.css') }}">
@@ -23,7 +23,9 @@
     <meta name="copyright" content="Ugho STEPHAN">
     <meta name="theme-color" content="#689F38">
     <meta name="description" content="@yield('description', 'Salle de sport sur Angers - Musculation, fitness, sauna, ...')" />
-    <link rel="shortcut icon" href="{{URL::to('/')}}/favicon.png" type="image/icon">
+
+    <link rel="shortcut icon" href="{{URL::to('/')}}/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{URL::to('/')}}/favicon.ico" type="image/x-icon">
 </head>
 <body>
     @include('layouts.partials.header', [])
