@@ -3,6 +3,10 @@
 @section('title', 'Administration de la salle de sport Myosine')
 @section('description', "Administration et gestion du site Myosine. Page réservé uniquement aux administrateurs.")
 
+@section('style')
+    <link rel="stylesheet" href="{{ URL::to('/') . elixir('css/vendor_admin.css') }}">
+@append
+
 @section('admin_menu')
     @if (!Auth::guest())
         @if(Session::has('breadcrumb'))
@@ -19,3 +23,7 @@
         @endif
     @endif
 @endsection
+
+@section('script')
+    <script src="{{ URL::to('/') . elixir('js/vendor_admin.js') }}"></script>
+@append

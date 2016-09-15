@@ -1,9 +1,6 @@
 @extends('layouts.private')
 
 @section('style')
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/dropzone/dist/min/basic.min.css">
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/dropzone/dist/min/dropzone.min.css">
-
     <style>
         .center-cropped {
             width: 180px;
@@ -55,9 +52,6 @@
 @endsection
 
 @section('script')
-    <script src="{{URL::to('/')}}/bower_components/bootbox.js/bootbox.js"></script>
-    <script src="{{URL::to('/')}}/bower_components/dropzone/dist/min/dropzone.min.js"></script>
-
     <script>
         $(document).ready(function() {
 

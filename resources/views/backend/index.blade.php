@@ -1,9 +1,5 @@
 @extends('layouts.private')
 
-@section('style')
-    <link rel="stylesheet" href="{{URL::to('/')}}/css/admin.css">
-@endsection
-
 @section('admin_menu')
     <br>
     <div class="row">

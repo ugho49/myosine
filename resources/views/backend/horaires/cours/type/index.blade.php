@@ -2,7 +2,6 @@
 
 @section('content')
     <p class="text-center">
-        <!--<a href="{{ URL::route('admin_horaire_cours') }}" class="btn btn-raised" role="button">Retour</a>-->
         <a href="{{ URL::route('admin_type_cours.create') }}" class="btn btn-success btn-raised" role="button">Créer un nouveau type de cours</a>
     </p>
 
@@ -38,8 +37,6 @@
 @endsection
 
 @section('script')
-    <script src="{{URL::to('/')}}/bower_components/bootbox.js/bootbox.js"></script>
-
     <script>
         $(document).ready(function() {
 

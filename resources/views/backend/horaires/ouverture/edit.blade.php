@@ -1,9 +1,5 @@
 @extends('layouts.private')
 
-@section('style')
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-@endsection
-
 @section('content')
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">

@@ -8,18 +8,9 @@
     <link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/bootstrap-material-design/dist/css/ripples.min.css">
-    <link rel="stylesheet" href="{{URL::to('/')}}/css/main.css">
-    <link rel="stylesheet" href="{{URL::to('/')}}/css/header.css">
-    <link rel="stylesheet" href="{{URL::to('/')}}/css/navbar.css">
-
-    @if(Session::has('bandeauContent'))
-        <link rel="stylesheet" href="{{URL::to('/')}}/css/li-scroller.css">
-    @endif
-
+    <link rel="stylesheet" href="{{ URL::to('/') . elixir('css/vendor.css') }}">
     @yield('style')
+    <link rel="stylesheet" href="{{ URL::to('/') . elixir('css/all.css') }}">
 
     <!-- Autres -->
     <meta charset="UTF-8">
@@ -72,13 +63,9 @@
 
     @include('layouts.partials.footer', [])
 
-    <script src="{{URL::to('/')}}/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="{{URL::to('/')}}/js/jquery.li-scroller.1.0.js"></script>
-    <script src="{{URL::to('/')}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="{{URL::to('/')}}/bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
-    <script src="{{URL::to('/')}}/bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
-    <script src="{{URL::to('/')}}/js/main.js"></script>
-    <script src="{{URL::to('/')}}/js/navbar.js"></script>
+    <script src="{{ URL::to('/') . elixir('js/vendor.js') }}"></script>
+    @yield('script')
+    <script src="{{ URL::to('/') . elixir('js/all.js') }}"></script>
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -89,8 +76,6 @@
         ga('create', 'UA-48402317-3', 'auto');
         ga('send', 'pageview');
     </script>
-
-    @yield('script')
 
     @if(Session::has('bandeauContent'))
         <script>

@@ -1,9 +1,5 @@
 @extends('layouts.private')
 
-@section('style')
-    <link rel="stylesheet" href="{{URL::to('/')}}/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-@endsection
-
 @section('content')
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
@@ -86,10 +82,6 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{URL::to('/')}}/bower_components/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="{{URL::to('/')}}/bower_components/moment/locale/fr.js"></script>
-    <script type="text/javascript" src="{{URL::to('/')}}/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-
     <script type="text/javascript">
         $(document).ready(function() {
             $('form').submit(function(){

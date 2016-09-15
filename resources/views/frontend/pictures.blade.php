@@ -3,10 +3,6 @@
 @section('title', 'Galerie photos de la salle myosine Angers')
 @section('description', 'Galerie photos de la salle. Venez découvrir les lieux par vous même !!!!')
 
-@section('style')
-    <link  href="{{URL::to('/')}}/bower_components/fotorama/fotorama.css" rel="stylesheet">
-@endsection
-
 @section('section_title', 'Galerie photos')
 
 @section('content')
@@ -15,8 +11,4 @@
             {!! $fotorama !!}
         </div>
     </div>
-@endsection
-
-@section('script')
-    <script src="{{URL::to('/')}}/bower_components/fotorama/fotorama.js"></script>
 @endsection
