@@ -46,7 +46,8 @@ class UserController extends Controller
                 Session::flash('flash_message', 'Vous êtes connecté avec succès.');
                 Session::flash('flash_type', 'success');
 
-                $user->last_ip = $_SERVER["REMOTE_ADDR"];
+                //$user->last_ip = $_SERVER["REMOTE_ADDR"];
+                $user->last_ip = $request->ip();
                 $user->last_connexion = Carbon::now();
                 $user->save();
 

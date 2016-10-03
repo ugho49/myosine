@@ -44,8 +44,8 @@
                             <h3 class="panel-title">carte</h3>
                         </div>
                         <div class="panel-body" style="padding: 0px;">
-                            <a href="https://www.google.com/maps/place/{{ Session::get('informations')->adresse_salle }}/">
-                                <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center={{ Session::get('informations')->adresse_salle }}&zoom=13&scale=2&size=600x220&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C{{ Session::get('informations')->adresse_salle }}" alt="Google Map of {{ Session::get('informations')->adresse_salle }}">
+                            <a href="https://www.google.com/maps/place/{{ Session::get('informations')->adresse_salle }}/" target="_blank">
+                                <img class="img-responsive" src="https://maps.googleapis.com/maps/api/staticmap?center={{ Session::get('informations')->adresse_salle }}&zoom=13&scale=2&size=600x220&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C{{ Session::get('informations')->adresse_salle }}" alt="Google Map of {{ Session::get('informations')->adresse_salle }}">
                             </a>
                         </div>
                     </div>
