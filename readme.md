@@ -5,13 +5,13 @@ This is the repository for the Sport Halls "Myosine" [Website](http://myosine-cl
 ## Usages
 
 ### Server Side
-- Laravel Framework
-- PHPMailer
+- [Laravel Framework](https://laravel.com/)
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
 ### Interface
-- Bootstrap material
-- Fotorama
-- Bootbox
-- Dropzone
-- Bootstrap Datetimepicker
-- Momentjs
+- [Bootstrap material](http://fezvrasta.github.io/bootstrap-material-design/)
+- [Fotorama](http://fotorama.io/)
+- [Bootbox](http://bootboxjs.com/)
+- [Dropzone](http://www.dropzonejs.com/)
+- [Bootstrap Datetimepicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
+- [MomentJs](http://momentjs.com/)
