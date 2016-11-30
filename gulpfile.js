@@ -11,13 +11,17 @@ var elixir = require('laravel-elixir');
  |
  */
 
+// For minify version
+// run gulp --production
+
 elixir(function(mix) {
 
     mix.styles([
         'bootstrap/dist/css/bootstrap.min.css',
         'bootstrap-material-design/dist/css/bootstrap-material-design.min.css',
         'bootstrap-material-design/dist/css/ripples.min.css',
-        'fotorama/fotorama.css'
+        'fotorama/fotorama.css',
+        'font-awesome/css/font-awesome.css'
     ],
     'public/css/vendor.css', 'resources/assets/components');
 
@@ -32,6 +36,8 @@ elixir(function(mix) {
 
     // copy font for bootstrap
     mix.copy('resources/assets/components/bootstrap/fonts', 'public/build/fonts');
+    // copy font for font-awesome
+    mix.copy('resources/assets/components/font-awesome/fonts', 'public/build/fonts');
     // copy images for fotorama
     mix.copy('resources/assets/components/fotorama/fotorama.png', 'public/build/css/fotorama.png');
     mix.copy('resources/assets/components/fotorama/fotorama@2x.png', 'public/build/css/fotorama@2x.png');

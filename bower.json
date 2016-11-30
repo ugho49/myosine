@@ -20,6 +20,7 @@
     "bootbox.js": "bootbox#^4.4.0",
     "dropzone": "^4.3.0",
     "eonasdan-bootstrap-datetimepicker": "^4.17.42",
-    "moment": "momentjs#^2.14.1"
+    "moment": "momentjs#^2.14.1",
+    "font-awesome": "^4.7.0"
   }
 }
