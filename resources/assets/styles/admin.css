@@ -6,7 +6,20 @@
     margin-top: 40px;
 }
 
-.admin_menu .thumbnail img {
-    height: 130px;
-    width: 130px;
+.admin_menu a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.admin_menu a:hover {
+    color: #689F38;
+}
+
+.admin_menu .panel:hover {
+    -webkit-box-shadow: 0 1px 16px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    box-shadow: 0 1px 16px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+}
+
+.admin_menu .panel:hover .panel-heading {
+    color: #689F38;
 }

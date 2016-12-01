@@ -36,11 +36,11 @@
 
                             <td>
                                 <a style="margin: 0px;" data-id="{{ $horaire->id_horaire }}" class="btn btn-info edit_horaire" href="{{ URL::route('admin_horaire_ouv.edit', $horaire->id_horaire) }}">
-                                    Modifier
+                                    Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 @if($horaire->debut_horaire)
                                     <a style="margin: 0px;" data-id="{{ $horaire->id_horaire }}" class="btn btn-danger remove_horaire" href="{{ URL::route('admin_horaire_ouv.remove', $horaire->id_horaire) }}">
-                                        Supprimer
+                                        Supprimer &nbsp;<i class="fa fa-ban" aria-hidden="true"></i>
                                     </a>
                                 @endif
                             </td>

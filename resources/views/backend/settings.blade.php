@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button class="btn btn-raised btn-success btn-lg" type="submit">Modifier</button>
+                            <button class="btn btn-raised btn-success btn-lg" type="submit">Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </div>
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="text-center">
-                            <button class="btn btn-raised btn-success btn-lg" type="submit">Modifier</button>
+                            <button class="btn btn-raised btn-success btn-lg" type="submit">Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </div>
@@ -114,7 +114,9 @@
                         </div>
 
                         <div class="text-center">
-                            <button class="btn btn-raised btn-success btn-lg" type="submit">Modifier</button>
+                            <button class="btn btn-raised btn-success btn-lg" type="submit">
+                                Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </form>
                 </div>

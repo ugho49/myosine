@@ -21,10 +21,10 @@
                             <td>{{ $type->libelle_typeC }}</td>
                             <td>
                                 <a style="margin: 0px;" data-id="{{ $type->id_typeC }}" class="btn btn-info edit_type" href="{{ URL::route('admin_type_cours.edit', $type->id_typeC) }}">
-                                    Modifier
+                                    Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a style="margin: 0px;" data-id="{{ $type->id_typeC }}" class="btn btn-danger remove_type" href="{{ URL::route('admin_type_cours.remove', $type->id_typeC) }}">
-                                    Supprimer
+                                    Supprimer &nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                         </tr>

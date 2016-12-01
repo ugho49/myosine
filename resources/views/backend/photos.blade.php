@@ -22,7 +22,7 @@
 @endsection
 
 @section('content')
-    <h2>Ajouter des nouvelles photos</h2>
+    <h2><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; Ajouter des nouvelles photos</h2>
     <div class="row">
 
         <div class="col-lg-12 text-center">
@@ -37,14 +37,14 @@
 
     <hr>
 
-    <h2>Editer les photos existantes</h2>
+    <h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp; Editer les photos existantes</h2>
     <br>
     <div class="row" id="photo_container">
         @foreach($photos as $photo)
             <div class="col-lg-3 col-md-3 col-md-3 col-xs-6" data-name="{{ $photo['name'] }}">
                 <div class="center-cropped">
                     <img src="{{ $photo['url'] }}" alt="{{ $photo['name'] }}" class="img-responsive" />
-                    <a href="javascript:void(0)" class="btn btn-danger remove_photo" data-name="{{ $photo['name'] }}">Supprimer</a>
+                    <a href="javascript:void(0)" class="btn btn-danger remove_photo" data-name="{{ $photo['name'] }}">Supprimer &nbsp;<i class="fa fa-trash" aria-hidden="true"></i></a>
                 </div>
             </div>
         @endforeach
@@ -104,6 +104,7 @@
                     "data-name" : name
                 });
                 a.text('Supprimer');
+                a.append('&nbsp;<i class="fa fa-trash" aria-hidden="true"></i>');
 
                 center_div.append(img);
                 center_div.append(a);

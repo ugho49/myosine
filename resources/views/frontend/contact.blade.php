@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Téléphone</h3>
+                            <h3 class="panel-title"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp; Téléphone</h3>
                         </div>
                         <div class="panel-body">
                             {{ Session::get('informations')->tel_salle }}
@@ -30,7 +30,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Adresse</h3>
+                            <h3 class="panel-title"><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp; Adresse</h3>
                         </div>
                         <div class="panel-body">
                             {{ Session::get('informations')->adresse_salle }}
@@ -41,7 +41,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">carte</h3>
+                            <h3 class="panel-title"><i class="fa fa-map-o" aria-hidden="true"></i>&nbsp; carte</h3>
                         </div>
                         <div class="panel-body" style="padding: 0px;">
                             <a href="https://www.google.com/maps/place/{{ Session::get('informations')->adresse_salle }}/" target="_blank">
@@ -91,7 +91,7 @@
                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_PUBLIC') }}"></div>
 
                 <div class="text-center">
-                    <button class="btn btn-raised btn-success btn-lg" type="submit">Envoyer</button>
+                    <button class="btn btn-raised btn-success btn-lg" type="submit">Envoyer &nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                 </div>
 
             </form>

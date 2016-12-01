@@ -24,12 +24,18 @@
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="control-label">Email :</label>
-                            <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required="required">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required="required">
+                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="control-label">Password :</label>
-                            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="required"/>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-unlock-alt fa-2x" aria-hidden="true"></i></span>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="required">
+                            </div>
                         </div>
 
                         <p>

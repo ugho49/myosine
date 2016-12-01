@@ -28,10 +28,10 @@
                             <td>{{ $horaire->type->libelle_typeC }}</td>
                             <td>
                                 <a style="margin: 0px;" data-id="{{ $horaire->id_cours }}" class="btn btn-info edit_horaire" href="{{ URL::route('admin_horaire_cours.edit', $horaire->id_cours) }}">
-                                    Modifier
+                                    Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a style="margin: 0px;" data-id="{{ $horaire->id_cours }}" class="btn btn-danger remove_horaire" href="{{ URL::route('admin_horaire_cours.remove', $horaire->id_cours) }}">
-                                    Supprimer
+                                    Supprimer &nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                         </tr>

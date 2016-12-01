@@ -41,10 +41,10 @@
                                 @endif
                                 <td>
                                     <a style="margin: 0px;" data-id="{{ $b->id_sb }}" class="btn btn-info edit_bandeau" href="{{ URL::route('admin_bandeau.edit', $b->id_sb) }}">
-                                        Modifier
+                                        Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
                                     <a style="margin: 0px;" data-id="{{ $b->id_sb }}" class="btn btn-danger remove_bandeau" href="{{ URL::route('admin_bandeau.remove', $b->id_sb) }}">
-                                        Supprimer
+                                        Supprimer &nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
                                 </td>
                             </tr>

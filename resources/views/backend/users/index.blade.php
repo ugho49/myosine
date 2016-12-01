@@ -22,6 +22,7 @@
                         <th>Nom</th>
                         <th>Email</th>
                         <th>Créé le</th>
+                        <th>Connecté le</th>
                         <th>Dernière IP</th>
                         <th>Statut</th>
                         <th>Rôles</th>
@@ -34,6 +35,7 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ date_format($user->created_at, "d-m-Y") }}</td>
+                            <td>@if($user->last_connexion) {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $user->last_connexion)->format('d-m-Y')  }} @endif</td>
                             <td>{{ $user->last_ip }}</td>
                             <td>
                                 @if($user->enabled)
@@ -50,13 +52,13 @@
                             <td>
                                 @if(Auth::user()->id != $user->id)
                                     <a style="margin: 0px;" data-id="{{ $user->id }}" class="btn btn-info edit_user" href="{{ URL::route('admin_users.edit', $user->id) }}">
-                                        Modifier
+                                        Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
                                     <a style="margin: 0px; @if(!$user->enabled) display:none; @endif;" data-id="{{ $user->id }}" data-activate="false" class="btn btn-danger activate_user" href="{{ URL::route('admin_users.desactivate', $user->id) }}">
-                                        Désactiver
+                                        Désactiver &nbsp;<i class="fa fa-ban" aria-hidden="true"></i>
                                     </a>
                                     <a style="margin: 0px; @if($user->enabled) display:none; @endif;" data-id="{{ $user->id }}" data-activate="true" class="btn btn-success activate_user" href="{{ URL::route('admin_users.activate', $user->id) }}">
-                                        Activer
+                                        Activer &nbsp;<i class="fa fa-unlock" aria-hidden="true"></i>
                                     </a>
                                 @endif
                             </td>

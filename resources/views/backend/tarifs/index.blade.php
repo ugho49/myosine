@@ -25,10 +25,10 @@
                             <td>{{ $tarif->prixEtu_tarif }} €</td>
                             <td>
                                 <a style="margin: 0px;" data-id="{{ $tarif->id_tarif }}" class="btn btn-info edit_tarif" href="{{ URL::route('admin_tarif.edit', $tarif->id_tarif) }}">
-                                    Modifier
+                                    Modifier &nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
                                 </a>
                                 <a style="margin: 0px;" data-id="{{ $tarif->id_tarif }}" class="btn btn-danger remove_tarif" href="{{ URL::route('admin_tarif.remove', $tarif->id_tarif) }}">
-                                    Supprimer
+                                    Supprimer &nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                             </td>
                         </tr>
