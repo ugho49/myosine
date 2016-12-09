@@ -31,7 +31,7 @@
                 <a href="{{ URL::route('renseignements') }}">Renseignements</a>
             </li>
             <li @if(Request::url() == URL::route('photos')) class="active" @endif>
-                <a href="{{ URL::route('photos') }}">Photos</a>
+                <a href="{{ URL::route('photos') }}">Photos / Videos</a>
             </li>
             <li @if(Request::url() == URL::route('contact')) class="active" @endif>
                 <a href="{{ URL::route('contact') }}">Contact</a>

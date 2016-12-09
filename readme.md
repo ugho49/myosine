@@ -15,3 +15,4 @@ This is the repository for the Sport Halls "Myosine" [Website](http://myosine-cl
 - [Dropzone](http://www.dropzonejs.com/)
 - [Bootstrap Datetimepicker](https://eonasdan.github.io/bootstrap-datetimepicker/)
 - [MomentJs](http://momentjs.com/)
+- [Font-awesome](http://fontawesome.io/)
