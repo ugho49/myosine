@@ -63,6 +63,20 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::post('/upload', ['as' => 'admin.photo.upload', 'uses' => 'AdminPhotoController@upload']);
     });
 
+    Route::group(['prefix' => 'video'], function () {
+        Route::get('/', ['as' => 'admin_video', 'uses' => 'AdminVideoController@index']);
+
+        Route::get('/create', ['as' => 'admin_video.create', 'uses' => 'AdminVideoController@create']);
+
+        Route::post('/create', ['as' => 'admin_video.store', 'uses' => 'AdminVideoController@store']);
+
+        Route::get('/{id}/edit', ['as' => 'admin_video.edit', 'uses' => 'AdminVideoController@edit']);
+
+        Route::post('/{id}/edit', ['as' => 'admin_video.update', 'uses' => 'AdminVideoController@update']);
+
+        Route::get('/{id}/remove', ['as' => 'admin_video.remove', 'uses' => 'AdminVideoController@remove']);
+    });
+
     Route::group(['prefix' => 'tarif'], function () {
         Route::get('/', ['as' => 'admin_tarif', 'uses' => 'AdminTarifController@index']);
 

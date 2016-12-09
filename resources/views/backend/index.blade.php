@@ -44,6 +44,19 @@
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+            <a href="{{  URL::route('admin_video') }}">
+                <div class="panel panel-default text-center text-uppercase">
+                    <div class="panel-heading">
+                        <i class="fa fa-video-camera fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="panel-body">
+                        Videos
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
             <a href="{{  URL::route('admin_tarif') }}">
                 <div class="panel panel-default text-center text-uppercase">
                     <div class="panel-heading">

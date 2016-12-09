@@ -27,7 +27,7 @@ class PicturesController extends Controller
     
     public function index() {
         $service = new PhotoService();
-        $videos = Video::all();
+        $videos = Video::orderBy("created_at", "DESC")->get();
 
         return view('frontend.pictures', [
                 "options" => $this->getOptionsFormat(),
